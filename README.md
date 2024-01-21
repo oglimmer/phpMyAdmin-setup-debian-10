@@ -1,4 +1,4 @@
-# how to run phpMyAdmin on Debian 10
+# how to run phpMyAdmin on Debian 11
 
 ## try this
 
@@ -12,7 +12,7 @@ access at http://localhost:8080/phpmyadmin/ with user=root, password=root
 
 ## setup summary
 
-On a fresh debian:10 you need:
+On a fresh debian:11 you need:
 
 ```bash
 apt-get update && apt-get install -y \
