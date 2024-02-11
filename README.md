@@ -8,6 +8,17 @@ run:
 docker compose up --build -d
 ```
 
+## Post installation
+
+You have to create a user and schema with tables to complete the phpMyAdmin setup:
+
+```bash
+docker exec phpmyadmin-phpmyadmin-1 /bin/sh -c 'cat /var/www/html/phpmyadmin/sql/create_tables.sql' > create_tables.sql
+docker exec -i phpmyadmin-db-1 mariadb -uroot -proot <create_tables.sql
+docker exec -i phpmyadmin-db-1 mariadb -uroot -proot -e "create user phpmyadmin@'%' identified by 'PGRI3cl287WFUfCgWRauoF8Oat1vuJdo'";
+docker exec -i phpmyadmin-db-1 mariadb -uroot -proot -e "grant all privileges on phpmyadmin.* to phpmyadmin@'%'";
+```
+
 access at http://localhost:8080/phpmyadmin/ with user=root, password=root
 
 ## setup summary

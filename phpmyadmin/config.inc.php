@@ -22,3 +22,8 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 
 $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
+
+$cfg['Servers'][$i]['controlhost'] = 'db';
+$cfg['Servers'][$i]['controluser'] = 'phpmyadmin';
+$cfg['Servers'][$i]['controlpass'] = 'PGRI3cl287WFUfCgWRauoF8Oat1vuJdo';
+$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
